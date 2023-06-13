@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Allow: /sitemap.xml
+Allow: /favicon*ico
+Disallow: /privacy_policy
+Disallow: /personal_DATA
+Disallow: /*?
+
+Sitemap: https://more-yacht.ru/sitemap.xml
+
+Host: https://more-yacht.ru/

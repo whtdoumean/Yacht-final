@@ -1,0 +1,1163 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wdth,wght,GRAD,XTRA,YOPQ,YTDE,YTUC@8..144,120,400,100,468,90,-203,712;8..144,120,500,100,468,90,-203,712;8..144,151,800,0,480,25,-305,760&display=swap");
+html {
+  overflow: auto;
+  color: #444444;
+}
+
+html.lock {
+  overflow: hidden;
+}
+
+body {
+  width: 100%;
+  background-color: #032270;
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Roboto Flex', sans-serif;
+  font-variation-settings: "wdth" 120, "wght" 400, "GRAD" 100, "XTRA" 468, "YOPQ" 90, "YTDE" -203, "YTUC" 712;
+  color: #444444;
+}
+
+body.lock {
+  overflow: hidden;
+}
+
+@media screen and (max-width: 599.98px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  z-index: 10;
+  background-color: #032270;
+  transition: transform ease .3s;
+}
+
+.header.hide {
+  transform: translateY(-100%);
+}
+
+.header-container {
+  max-width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 12px 0px;
+}
+
+.header-menu {
+  width: 100%;
+  position: relative;
+}
+
+.menu-icon {
+  display: none;
+}
+
+.menu-body {
+  width: 100%;
+}
+
+.menu-list li {
+  position: relative;
+}
+
+.extra-content {
+  display: none;
+}
+
+.menu-link {
+  color: #fff;
+  font-size: 1.5rem;
+  font-variation-settings: "wdth" 120, "wght" 500, "GRAD" 100, "XTRA" 468, "YOPQ" 90, "YTDE" -203, "YTUC" 712;
+  text-decoration: none;
+}
+
+@media (max-width: 1250px) {
+  .header-container {
+    width: 90%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .menu-list {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 1024px) {
+  .header {
+    height: 64px;
+  }
+  .header-menu::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 64px;
+    background-color: #032270;
+    z-index: 4;
+    box-shadow: none;
+  }
+  .menu-body {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #032270;
+    box-sizing: border-box;
+    padding: 84px 12px 120px 12px;
+    overflow: auto;
+    transition: all .5s ease 0s;
+    transform: translateY(-100%);
+  }
+  .menu-body._active {
+    transform: translateY(0%);
+    border-radius: 0px 0px 0px 0px;
+  }
+  .menu-body._active .menu-list {
+    transform: translateY(0%);
+  }
+  .menu-icon._active span {
+    transform: scale(0%);
+  }
+  .menu-icon._active::before {
+    top: 50%;
+    transform: rotate(-45deg) translateY(-50%);
+  }
+  .menu-icon._active::after {
+    bottom: 50%;
+    transform: rotate(45deg) translateY(50%);
+  }
+  .menu-list {
+    z-index: 3;
+    transform: translateY(0%);
+    transition: all .5s ease 0s;
+    margin: auto;
+    margin-bottom: 56px;
+  }
+  .menu-list li {
+    flex-wrap: wrap;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 32px 0px;
+  }
+  .menu-list li a {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+  .extra-content {
+    font-size: 2.25rem;
+    font-variation-settings: "wdth" 120, "wght" 400, "GRAD" 100, "XTRA" 468, "YOPQ" 90, "YTDE" -203, "YTUC" 712;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.4);
+    padding: 32px 0px;
+    position: relative;
+    margin: auto;
+    display: block;
+  }
+  .extra-content::before {
+    content: "";
+    height: 2px;
+    width: 84%;
+    background-color: rgba(255, 255, 255, 0.4);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .menu-icon {
+    z-index: 10;
+    display: block;
+    position: relative;
+    width: 36px;
+    height: 24px;
+    margin-left: auto;
+    cursor: pointer;
+    transition: all .5s ease 0s;
+  }
+  .menu-icon span,
+  .menu-icon::before,
+  .menu-icon::after {
+    position: absolute;
+    left: 0;
+    height: 10%;
+    width: 100%;
+    transition: all .3s ease 0s;
+    background-color: #fff;
+    border-radius: 10px;
+  }
+  .menu-icon::before {
+    content: "";
+    top: 0;
+  }
+  .menu-icon::after {
+    content: "";
+    bottom: 0;
+  }
+  .menu-icon span {
+    top: 50%;
+    transform: scale(1) translateY(-50%);
+  }
+}
+
+.fake-header {
+  width: 100%;
+  height: 80px;
+  background-color: #032270;
+}
+
+@media (max-width: 1024px) {
+  .fake-header {
+    height: 64px;
+  }
+}
+
+.wrapper {
+  width: 100%;
+  background-color: #0b627d;
+  background-image: url("../../../pictures/background/background_pic.webp");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+}
+
+.wrapper.lock {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.main-pic {
+  z-index: 0;
+  position: absolute;
+  left: 0;
+  top: -10vw;
+  width: 100%;
+}
+
+.main {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 1249.98px) {
+  .main {
+    width: 90%;
+  }
+  .main-pic {
+    top: 0;
+  }
+}
+
+.slogan {
+  position: relative;
+  flex-direction: column;
+  width: 100%;
+  height: 48vmax;
+  color: white;
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.slogan .slogan-in {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.slogan .slogan-in h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  font-weight: 800;
+  font-variation-settings: "wdth" 151, "wght" 800, "GRAD" 0, "XTRA" 480, "YOPQ" 25, "YTDE" -305, "YTUC" 760;
+}
+
+.slogan .slogan-in .main-but {
+  width: 285px;
+  height: 56px;
+  margin-top: 32px;
+  position: relative;
+  color: #fff;
+  font-size: 1.75rem;
+  border-radius: 40px;
+  border: 0px;
+  padding: 0;
+  font-family: 'Roboto Flex', sans-serif;
+  font-variation-settings: "wdth" 120, "wght" 500, "GRAD" 100, "XTRA" 468, "YOPQ" 90, "YTDE" -203, "YTUC" 712;
+  background: linear-gradient(to left, #F13C20, #ea5842, #F13C20);
+  background-size: 200%;
+  transition: .5s;
+}
+
+.slogan .slogan-in .main-but:hover {
+  background-position: right;
+  transform: scale(101%);
+}
+
+.slogan .slogan-in .main-but:active {
+  background-position: left;
+  transform: scale(99%);
+}
+
+.block {
+  width: 100%;
+  position: relative;
+  margin: 0 auto;
+  margin-top: 10vw;
+}
+
+.title {
+  font-size: 2.25rem;
+  font-variation-settings: "wdth" 151, "wght" 800, "GRAD" 0, "XTRA" 480, "YOPQ" 25, "YTDE" -305, "YTUC" 760;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+  height: fit-content;
+  color: #fff;
+}
+
+.title .separator {
+  align-items: center;
+  width: 144px;
+  height: 4px;
+  background-color: #fff;
+  opacity: 50%;
+  margin-top: 16px;
+  border-radius: 16px;
+}
+
+.yachts {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 42px;
+}
+
+.yachts .yacht-card {
+  border-radius: 32px;
+  background-color: #fff;
+  width: 45.5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: fit-content;
+  position: relative;
+  color: #444444;
+}
+
+.yachts .yacht-card img {
+  width: 100%;
+  position: relative;
+  border-radius: 32px 32px 0px 0px;
+}
+
+.yachts .yacht-card .name {
+  font-size: 2rem;
+  text-align: center;
+  position: relative;
+  margin-top: 12px;
+  font-variation-settings: "wdth" 151, "wght" 800, "GRAD" 0, "XTRA" 480, "YOPQ" 25, "YTDE" -305, "YTUC" 760;
+}
+
+.yachts .yacht-card .cost-cont {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 17.5px 0px 17.5px 0px;
+}
+
+.yachts .yacht-card .cost-cont .icon-ruble {
+  border-radius: 100px;
+  width: 28px;
+  height: 28px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 6px;
+  background-color: #5a5a5a;
+  color: #fff;
+  text-align: center;
+  font-size: 1.25rem;
+  font-variation-settings: "wdth" 120, "wght" 400, "GRAD" 100, "XTRA" 468, "YOPQ" 90, "YTDE" -203, "YTUC" 712;
+}
+
+.yachts .yacht-card .cost-cont .cost {
+  font-size: 1.5rem;
+  position: relative;
+  text-align: center;
+}
+
+.yachts .yacht-card .inf-but-cont {
+  width: 100%;
+  display: inline-block;
+  padding: 0px 12px 12px 12px;
+}
+
+.yachts .yacht-card .inf-but-cont .inf-but {
+  position: relative;
+  width: 100%;
+  height: 56px;
+  color: #fff;
+  font-size: 1.5rem;
+  border-radius: 40px;
+  border: 0px;
+  background: linear-gradient(to left, #F13C20, #ea5842, #F13C20);
+  background-size: 200%;
+  transition: .5s;
+  font-family: 'Roboto Flex', sans-serif;
+  font-variation-settings: "wdth" 120, "wght" 500, "GRAD" 100, "XTRA" 468, "YOPQ" 90, "YTDE" -203, "YTUC" 712;
+}
+
+.yachts .yacht-card .inf-but-cont .inf-but:hover {
+  background-position: right;
+  transform: scale(101%);
+}
+
+.yachts .yacht-card .inf-but-cont .inf-but:active {
+  background-position: left;
+  transform: scale(99%);
+}
+
+@media screen and (max-width: 599.98px) {
+  .yachts .yacht-card .cost-cont .icon-ruble {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+@media screen and (max-width: 767.98px) {
+  .yachts {
+    flex-direction: column;
+  }
+  .yachts .yacht-card {
+    width: 100%;
+  }
+  .yachts .yacht-card:first-child {
+    margin-bottom: 40px;
+  }
+  .main-pic {
+    top: 20px;
+  }
+}
+
+.booking {
+  width: 100%;
+  height: fit-content;
+  margin-top: 42px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.booking .booking-card {
+  background-color: #fff;
+  border-radius: 32px;
+  width: 45.5%;
+  box-sizing: border-box;
+  padding: 12px;
+  position: relative;
+}
+
+.booking .booking-card .form {
+  width: 90%;
+  margin: auto;
+  margin-top: 12px;
+  position: relative;
+}
+
+.booking .booking-card .form .input {
+  margin-bottom: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.booking .booking-card .form .input .input-phone-form-container {
+  width: 100%;
+  position: relative;
+}
+
+.booking .booking-card .form .input .label {
+  margin-bottom: 12px;
+  cursor: text;
+  font-size: 1.5rem;
+  font-variation-settings: "wdth" 120, "wght" 500, "GRAD" 100, "XTRA" 468, "YOPQ" 90, "YTDE" -203, "YTUC" 712;
+  text-align: center;
+  width: 100%;
+  color: #444444;
+}
+
+.booking .booking-card .form .input .form-control {
+  display: block;
+  border: solid 2px #bebebe;
+  border-radius: 8px;
+  width: 100%;
+  font-variation-settings: "wdth" 120, "wght" 400, "GRAD" 100, "XTRA" 468, "YOPQ" 90, "YTDE" -203, "YTUC" 712;
+  box-sizing: border-box;
+  padding: 8px 12px 8px 12px;
+  transition: all .2s ease-in-out;
+  font-size: 1.5rem;
+  outline: none;
+}
+
+.booking .booking-card .form .input .form-control.phone {
+  padding: 8px 12px 8px 4rem;
+}
+
+.booking .booking-card .form .input .form-control._error {
+  border: solid 2px #ff8080;
+  box-shadow: 0 0 0px 2px #ff8080;
+}
+
+.booking .booking-card .form .input .form-control:focus {
+  border: solid 2px #80bdff;
+  box-shadow: 0 0 0px 2px #80bdff;
+}
+
+.booking .booking-card .form .input .form-control::placeholder {
+  color: #a2a2a2;
+}
+
+.booking .booking-card .form .input .form-control:first-child {
+  margin-bottom: 24px;
+}
+
+.booking .booking-card .form .input .number {
+  position: absolute;
+  padding: 8px 12px 8px 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  width: 3.4rem;
+  border: none;
+  border-radius: 0px;
+  color: #444444;
+  border-right: solid 2px #bebebe;
+}
+
+.booking .booking-card .form .input .select option {
+  font-size: 1.5rem;
+  width: 50%;
+  border: 0;
+}
+
+.booking .booking-card .form .yacht {
+  margin-bottom: 20px;
+}
+
+.booking .booking-card .form .input-agreement {
+  margin-bottom: 12px;
+}
+
+.booking .booking-card .form .input-agreement .custom-checkbox {
+  display: none;
+}
+
+.booking .booking-card .form .input-agreement .custom-checkbox._error + label::before {
+  border-color: #ff8080;
+  box-shadow: 0 0 0px 2px #ff8080;
+}
+
+.booking .booking-card .form .input-agreement .custom-checkbox:checked + label::before {
+  background-color: #0b76ef;
+  border-color: #0b76ef;
+}
+
+.booking .booking-card .form .input-agreement .custom-checkbox:not(:disabled):active + label::before {
+  background-color: #b3d7ff;
+  border-color: #b3d7ff;
+}
+
+.booking .booking-card .form .input-agreement .custom-checkbox:focus + label::before {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.booking .booking-card .form .input-agreement .custom-checkbox:focus:not(:checked) + label::before {
+  border-color: #80bdff;
+}
+
+.booking .booking-card .form .input-agreement .custom-checkbox:hover + label::before {
+  border-color: #0b76ef;
+}
+
+.booking .booking-card .form .input-agreement .custom-checkbox:checked + label::after {
+  transform: scale(1);
+}
+
+.booking .booking-card .form .input-agreement .label {
+  text-align: left;
+  font-size: 1.1rem;
+  display: inline-flex;
+  line-height: 140%;
+  align-items: center;
+  position: relative;
+  color: rgba(68, 68, 68, 0.7);
+}
+
+.booking .booking-card .form .input-agreement .label a {
+  color: rgba(11, 117, 239, 0.7);
+  text-decoration: none;
+}
+
+.booking .booking-card .form .input-agreement .label::before {
+  content: "";
+  align-self: flex-start;
+  flex: 0 0 24px;
+  height: 24px;
+  background-color: #fff;
+  border-radius: 8px;
+  border: solid 2px #bebebe;
+  margin: 0px 8px 0px 0px;
+  cursor: default;
+  transition: all ease-in-out .15s;
+}
+
+.booking .booking-card .form .input-agreement .label::after {
+  content: "";
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url("../../../pictures/ui/check-bold.svg");
+  background-repeat: no-repeat;
+  background-size: 72% 72%;
+  background-position: 50% 50%;
+  cursor: default;
+  transform: scale(0);
+  transition: all ease-in-out .15s;
+}
+
+.booking .booking-card .form .input-agreement .label::before:checked {
+  background-color: #0b76ef;
+}
+
+.booking .booking-card .form .booking-but-cont {
+  width: 110%;
+  margin-left: -5%;
+}
+
+.booking .booking-card .form .booking-but-cont p {
+  font-size: 1.5rem;
+  text-align: center;
+  font-variation-settings: "wdth" 120, "wght" 500, "GRAD" 100, "XTRA" 468, "YOPQ" 90, "YTDE" -203, "YTUC" 712;
+  margin-bottom: 12px;
+  color: #444444;
+}
+
+.booking .booking-card .form .booking-but-cont .booking-but {
+  position: relative;
+  width: 100%;
+  height: 56px;
+  color: #fff;
+  font-size: 1.5rem;
+  border-radius: 40px;
+  border: 0px;
+  background: linear-gradient(to left, #F13C20, #ea5842, #F13C20);
+  background-size: 200%;
+  transition: .5s;
+  font-family: 'Roboto Flex', sans-serif;
+  font-variation-settings: "wdth" 120, "wght" 500, "GRAD" 100, "XTRA" 468, "YOPQ" 90, "YTDE" -203, "YTUC" 712;
+}
+
+.booking .booking-card .form .booking-but-cont .booking-but:hover {
+  background-position: right;
+  transform: scale(101%);
+}
+
+.booking .booking-card .form .booking-but-cont .booking-but:active {
+  background-position: left;
+  transform: scale(99%);
+}
+
+.booking .booking-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 32px;
+  transition: all ease-in-out .3s;
+  z-index: 9;
+
+  background: white url("../../../pictures/dinamic/loading.gif") center/50px no-repeat;
+
+  opacity: 0;
+  visibility: hidden;
+}
+
+.booking .booking-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 32px;
+  transition: all ease-in-out .3s;
+
+  background: white url("../../../pictures/ui/new_done.png") center/60% no-repeat;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.booking .booking-card._sending::before {
+  opacity: 1;
+  visibility: visible;
+}
+
+.booking .booking-card._done::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media screen and (max-width: 999.98px) {
+  .booking .booking-card {
+    width: 100%;
+  }
+}
+
+.comments {
+  width: 100%;
+  height: max-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  margin-top: 42px;
+}
+
+.comments .comments-card {
+  width: 30%;
+  background-color: #fff;
+  color: #444444;
+  box-sizing: border-box;
+  padding: 28px 28px;
+  border-radius: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 1.5rem;
+}
+
+.comments .comments-card:not(:first-child) {
+  margin-left: 3.33%;
+}
+
+.comments-card p {
+  max-height: 280px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.comments .comments-card .comments-name {
+  margin-top: 10px;
+  font-variation-settings: "wdth" 120, "wght" 500, "GRAD" 100, "XTRA" 468, "YOPQ" 90, "YTDE" -203, "YTUC" 712;
+  color: #000;
+}
+
+.comments .comments-card .comments-name p {
+  text-align: center;
+}
+
+@media screen and (max-width: 999.98px) {
+  .comments {
+    flex-direction: column;
+  }
+  .comments .comments-card {
+    width: 100%;
+  }
+  .comments .comments-card:not(:first-child) {
+    margin: 0;
+    margin-top: 24px;
+  }
+}
+
+.contacts {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #fff;
+  border-radius: 32px;
+  margin-top: 42px;
+}
+
+.contacts .data {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28%;
+  font-size: 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  font-variation-settings: "wdth" 120, "wght" 400, "GRAD" 100, "XTRA" 468, "YOPQ" 90, "YTDE" -203, "YTUC" 712;
+}
+
+.contacts .data .data-corr:not(:last-child) {
+  margin-bottom: 54px;
+}
+
+.contacts .data .mini-title {
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 8px;
+  color: #000;
+  font-variation-settings: "wdth" 120, "wght" 500, "GRAD" 100, "XTRA" 468, "YOPQ" 90, "YTDE" -203, "YTUC" 712;
+}
+
+.contacts .data .mini-title p {
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 16px;
+  text-decoration: none;
+}
+
+.contacts .map {
+  width: 70%;
+  border-radius: 18px;
+}
+
+.contacts .map iframe {
+  border-radius: 18px;
+}
+
+@media screen and (max-width: 1249.98px) {
+  .contacts .data {
+    width: 60%;
+  }
+  .contacts .map {
+    width: 38%;
+  }
+}
+
+@media screen and (max-width: 999.98px) {
+  .contacts {
+    flex-direction: column;
+  }
+  .contacts .data {
+    width: 100%;
+    order: 1;
+  }
+  .contacts .data .data-corr:not(:last-child) {
+    margin-bottom: 34px;
+  }
+  .contacts .map {
+    width: 100%;
+    height: 344px;
+    order: 0;
+    margin-bottom: 16px;
+  }
+}
+
+footer {
+  width: 100%;
+  height: fit-content;
+  box-sizing: border-box;
+  padding: 28px 0px 56px 0px;
+  background-color: #032270;
+  color: #fff;
+  z-index: 1;
+  margin-top: 10vw;
+}
+
+footer .footer-content {
+  width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+footer .footer-content .footer-title {
+  font-size: 1.5rem;
+  font-variation-settings: "wdth" 151, "wght" 800, "GRAD" 0, "XTRA" 480, "YOPQ" 25, "YTDE" -305, "YTUC" 760;
+  text-align: center;
+  padding-right: 16px;
+}
+
+footer .footer-content .footer-data {
+  width: fit-content;
+  height: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-variation-settings: "wdth" 120, "wght" 500, "GRAD" 100, "XTRA" 468, "YOPQ" 90, "YTDE" -203, "YTUC" 712;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+footer .footer-content .footer-data p {
+  text-decoration: none;
+}
+
+footer .footer-politics {
+  width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 28px;
+  color: white;
+  opacity: 75%;
+}
+
+footer .footer-politics a {
+  text-decoration: none;
+  color: white;
+}
+
+footer .footer-politics .politic {
+  margin-right: 1rem;
+}
+
+@media screen and (max-width: 1249.98px) {
+  footer .footer-content {
+    width: 90%;
+    text-decoration: none;
+  }
+  footer .footer-content .footer-data {
+    flex-direction: column;
+  }
+  footer .footer-content .footer-data p {
+    text-align: right;
+    text-decoration: none;
+  }
+  footer .footer-politics {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 629.98px) {
+  footer .footer-content .footer-title {
+    font-size: 1.35rem;
+    width: 50%;
+    text-decoration: none;
+    padding-right: 0px;
+  }
+  footer .footer-content .footer-data {
+    width: fit-content;
+    justify-content: center;
+    text-decoration: none;
+  }
+  footer .footer-content .footer-data .footer-dis {
+    display: none;
+  }
+  footer .footer-content .footer-data p {
+    font-size: 1.35rem;
+    width: fit-content;
+    white-space: nowrap;
+    text-decoration: none;
+  }
+  footer .footer-politics {
+    flex-direction: column;
+    justify-content: center;
+  }
+  footer .footer-politics a {
+    text-align: center;
+  }
+  footer .footer-politics .politic {
+    margin-right: 0;
+    padding-bottom: 8px;
+  }
+}
+
+.popup {
+  z-index: 1001;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-backdrop-filter: blur(32px);
+  backdrop-filter: blur(32px);
+  box-shadow: inset 0 0 32px 3000px rgba(56, 102, 155, 0.272);
+  opacity: 0;
+  visibility: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: all ease-in-out .5s;
+}
+
+.popup.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup.open .popup-content {
+  transform: scale(100%);
+}
+
+.popup-body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 12px;
+}
+
+.popup-content {
+  background-color: #fff;
+  color: #000;
+  width: 452px;
+  height: fit-content;
+  border-radius: 32px;
+  box-sizing: border-box;
+  transform: scale(98%);
+  transition: all ease .5s;
+}
+
+.popup-content .popup-title {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-sizing: border-box;
+  padding: 24px;
+}
+
+.popup-content .popup-title p {
+  font-variation-settings: "wdth" 151, "wght" 800, "GRAD" 0, "XTRA" 480, "YOPQ" 25, "YTDE" -305, "YTUC" 760;
+  font-size: 1.75rem;
+}
+
+.popup-content .popup-title .close-popup-content {
+  position: absolute;
+  right: 24px;
+  transition: all ease-in-out .5s;
+}
+
+.popup-content .popup-title .close-popup-content .close-cont {
+  border-radius: 100px;
+  width: 32px;
+  height: 32px;
+  background-color: #cfcfcf;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-content .popup-title .close-popup-content .close-cont img {
+  width: 20px;
+  height: 20px;
+}
+
+.popup-content .popup-title .close-popup-content:hover {
+  transform: rotate(-90deg) scale(105%);
+}
+
+.popup-content .popup-title .close-popup-content:active {
+  transform: rotate(-180deg) scale(95%);
+}
+
+.popup-content .carousel {
+  width: 100%;
+  height: fit-content;
+  overflow: hidden;
+  position: relative;
+}
+
+.popup-content .carousel .sliderLine {
+  width: max-content;
+  height: 300px;
+  background: none;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  left: 0px;
+  transition: all cubic-bezier(0.46, 0.03, 0.52, 0.96) 0.7s;
+}
+
+.popup-content .carousel button {
+  background: none;
+  height: 100%;
+  width: 60px;
+  border: none;
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.popup-content .carousel button img {
+  width: 100%;
+  height: 48px;
+}
+
+.popup-content .carousel .slider-prev {
+  left: 0;
+  padding: 0px 0px 0px 4px;
+}
+
+.popup-content .carousel .slider-next {
+  right: 0;
+  padding: 0px 4px 0px 0px;
+}
+
+.popup-content .popup-info {
+  box-sizing: border-box;
+  padding: 12px 24px 24px 24px;
+}
+
+.popup-content .popup-info .element {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 1.5rem;
+  font-variation-settings: "wdth" 120, "wght" 500, "GRAD" 100, "XTRA" 468, "YOPQ" 90, "YTDE" -203, "YTUC" 712;
+  color: #444444;
+  padding: 16px 0px;
+}
+
+.popup-content .popup-info .element:not(:last-child) {
+  border-bottom: solid 2px #dfdfdf;
+}
+
+.popup-content .popup-info .element:last-child {
+  padding: 16px 0px 0px 0px;
+}
+
+@media screen and (max-width: 599.98px) {
+  .popup-content {
+    width: 100%;
+  }
+}

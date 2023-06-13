@@ -1,0 +1,7 @@
+#db
+/db/database.db
+
+#cache
+/__pycache__
+/set/.env
+
